@@ -2,8 +2,8 @@ $(document).ready(function () {
       // Controller
       let isPlay = false;
       // SVG
-      var svgPlayElement = $('<svg id="fi_727245" width="25px" height="25px" enable-background="new 0 0 320.001 320.001" viewBox="0 0 320.001 320.001" xmlns="http://www.w3.org/2000/svg"><path d="m295.84 146.049-256-144c-4.96-2.784-11.008-2.72-15.904.128-4.928 2.88-7.936 8.128-7.936 13.824v288c0 5.696 3.008 10.944 7.936 13.824 2.496 1.44 5.28 2.176 8.064 2.176 2.688 0 5.408-.672 7.84-2.048l256-144c5.024-2.848 8.16-8.16 8.16-13.952s-3.136-11.104-8.16-13.952z"></path><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>');
-  var svgPauseElement = $('<svg id="fi_727245" width="25px" height="25px" viewBox="-45 0 327 327" width="327pt" xmlns="http://www.w3.org/2000/svg" id="fi_1214679"><path d="m158 0h71c4.417969 0 8 3.582031 8 8v311c0 4.417969-3.582031 8-8 8h-71c-4.417969 0-8-3.582031-8-8v-311c0-4.417969 3.582031-8 8-8zm0 0"></path><path d="m8 0h71c4.417969 0 8 3.582031 8 8v311c0 4.417969-3.582031 8-8 8h-71c-4.417969 0-8-3.582031-8-8v-311c0-4.417969 3.582031-8 8-8zm0 0"></path></svg>')
+      var svgPlayElement = $('<svg id="fi_727245" width="15px" height="15px" fill="white" enable-background="new 0 0 320.001 320.001" viewBox="0 0 320.001 320.001" xmlns="http://www.w3.org/2000/svg"><path d="m295.84 146.049-256-144c-4.96-2.784-11.008-2.72-15.904.128-4.928 2.88-7.936 8.128-7.936 13.824v288c0 5.696 3.008 10.944 7.936 13.824 2.496 1.44 5.28 2.176 8.064 2.176 2.688 0 5.408-.672 7.84-2.048l256-144c5.024-2.848 8.16-8.16 8.16-13.952s-3.136-11.104-8.16-13.952z"></path><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>');
+  var svgPauseElement = $('<svg id="fi_727245" width="15px" height="15px" fill="white" viewBox="-45 0 327 327"  xmlns="http://www.w3.org/2000/svg" id="fi_1214679"><path d="m158 0h71c4.417969 0 8 3.582031 8 8v311c0 4.417969-3.582031 8-8 8h-71c-4.417969 0-8-3.582031-8-8v-311c0-4.417969 3.582031-8 8-8zm0 0"></path><path d="m8 0h71c4.417969 0 8 3.582031 8 8v311c0 4.417969-3.582031 8-8 8h-71c-4.417969 0-8-3.582031-8-8v-311c0-4.417969 3.582031-8 8-8zm0 0"></path></svg>')
   //Set button svg
   $("#ctrl-bttn").append(svgPlayElement);
       // Canvas setup
@@ -62,7 +62,7 @@ $(document).ready(function () {
         // Draw the circle
         ctx.beginPath();
         ctx.arc(centerX, centerY, radius, 0, Math.PI * 2); // Circle's path
-        ctx.strokeStyle = 'black';
+        ctx.strokeStyle = '#3A3F50';
         ctx.lineWidth = 2;
         ctx.stroke();
 
@@ -73,12 +73,12 @@ $(document).ready(function () {
         // Draw the dot
         ctx.beginPath();
         ctx.arc(dotX, dotY, 5, 0, Math.PI * 2); // Small dot
-        ctx.fillStyle = 'red';
+        ctx.fillStyle = '#B1C4FE';
         ctx.fill();
 
         // Draw the timer at the center
         ctx.font = '24px Arial';
-        ctx.fillStyle = 'black';
+        ctx.fillStyle = 'white';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
         ctx.fillText(formatTime(timerValue), centerX, centerY);
