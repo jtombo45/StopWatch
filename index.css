@@ -1,21 +1,49 @@
-<html lang="en">
-<head>
-  <!-- Importing jQuery -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-</head>
-<body>
-  <div id="stopwatch-container">
-    <div id="header"><button id="stopwatch">Stopwatch</button></div>
-  <!-- Canvas for drawing the circle, rotating dot, and timer -->
-  <canvas id="circleCanvas"></canvas>
-<!-- Play and Pause Buttons -->
-  <div id="controls">
-    <button id="ctrl-bttn">
-    </button>
-    <button id="reset-bttn">
-      Reset
-    </button>
-  </div>
-  </div>
-</body>
-</html>
+#stopwatch-container {
+  width: 400px;
+  display: block;
+  margin: auto;
+  background-color: #2c303d;
+}
+/* Styling for buttons */
+#controls {
+  display: flex; /* Apply flexbox */
+  justify-content: space-between; /* Distribute buttons evenly in the container */
+  margin-bottom: 20px;
+}
+
+#ctrl-bttn,
+#reset-bttn {
+  width: 45%; /* Each button takes 40% of the container width */
+  height: 40px;
+  margin: 10px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  background-color: #33517d;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin: 5px;
+  cursor: pointer;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  background-color: #33517d;
+}
+
+#stopwatch {
+  margin: 10px;
+  /*border: none;*/
+}
+
+/* Center canvas within the page */
+canvas {
+  display: block;
+  margin: auto;
+  background-color: #2c303d;
+}
