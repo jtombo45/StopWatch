@@ -1,6 +1,34 @@
 $(document).ready(function () {
+  let ctrlDiv = $("#controls");
+  let resetBttn = $("#reset-bttn");
+  let ctrlBttn = $("#ctrl-bttn");
+  
+  resetBttn.hide();
+  
+  function resetButtonConfig() {
+    // Button configuration
+    // Apply flexbox styles to the parent div
+    ctrlDiv.css({
+      display: "flex",
+      justifyContent: "center", // Center horizontally
+      alignItems: "center", // Center vertically
+      height: "100%" // Ensure parent has height for vertical centering
+    });
+    ctrlBttn.css("width", "80%");
+  }
+  
+  function showCtrlButtons() {
+    resetBttn.show();
+    ctrlDiv.removeAttr("style");
+    resetBttn.removeAttr("style");
+    ctrlBttn.removeAttr("style");
+  }
+  
+  resetButtonConfig();
+
   // Controller
   let isPlay = false;
+
   // SVG
   var svgPlayElement = $(
     '<svg id="fi_727245" width="15px" height="15px" fill="white" enable-background="new 0 0 320.001 320.001" viewBox="0 0 320.001 320.001" xmlns="http://www.w3.org/2000/svg"><path d="m295.84 146.049-256-144c-4.96-2.784-11.008-2.72-15.904.128-4.928 2.88-7.936 8.128-7.936 13.824v288c0 5.696 3.008 10.944 7.936 13.824 2.496 1.44 5.28 2.176 8.064 2.176 2.688 0 5.408-.672 7.84-2.048l256-144c5.024-2.848 8.16-8.16 8.16-13.952s-3.136-11.104-8.16-13.952z"></path><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>'
@@ -8,8 +36,10 @@ $(document).ready(function () {
   var svgPauseElement = $(
     '<svg id="fi_727245" width="15px" height="15px" fill="white" viewBox="-45 0 327 327"  xmlns="http://www.w3.org/2000/svg" id="fi_1214679"><path d="m158 0h71c4.417969 0 8 3.582031 8 8v311c0 4.417969-3.582031 8-8 8h-71c-4.417969 0-8-3.582031-8-8v-311c0-4.417969 3.582031-8 8-8zm0 0"></path><path d="m8 0h71c4.417969 0 8 3.582031 8 8v311c0 4.417969-3.582031 8-8 8h-71c-4.417969 0-8-3.582031-8-8v-311c0-4.417969 3.582031-8 8-8zm0 0"></path></svg>'
   );
+
   //Set button svg
   $("#ctrl-bttn").append(svgPlayElement);
+
   // Canvas setup
   const canvas = document.getElementById("circleCanvas");
   const ctx = canvas.getContext("2d");
@@ -136,23 +166,22 @@ $(document).ready(function () {
 
     // Reset the Play/Pause button to the "Play" state
     isPlay = false;
-    $("#ctrl-bttn").empty();
-    $("#ctrl-bttn").append(svgPlayElement);
+    $("#ctrl-bttn").empty().append(svgPlayElement);
+    resetButtonConfig();
+    resetBttn.hide();
   });
 
   // Event listeners for Play and Pause buttons
   $("#ctrl-bttn").on("click", function () {
+    showCtrlButtons();
     if (isPlay) {
       stopAnimation();
-      $("#ctrl-bttn").empty();
-      $("#ctrl-bttn").append(svgPlayElement);
+      $("#ctrl-bttn").empty().append(svgPlayElement);
     } else {
       startAnimation();
-      $("#ctrl-bttn").empty();
-      $("#ctrl-bttn").append(svgPauseElement);
+      $("#ctrl-bttn").empty().append(svgPauseElement);
     }
     isPlay = !isPlay;
   });
-
-  /*$('#pause').on('click', stopAnimation);*/
+  
 });
