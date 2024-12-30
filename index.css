@@ -1,21 +1,25 @@
 #stopwatch-container {
-  width: 400px;
+  width: 100%; /* Make container full width */
+  max-width: 400px; /* Set max-width to 400px */
   display: block;
   margin: auto;
   background-color: #2c303d;
+  padding: 20px; /* Add padding for spacing */
+  box-sizing: border-box; /* Ensure padding doesn't affect the overall width */
 }
-/* Styling for buttons */
+
 #controls {
-  display: flex; /* Apply flexbox */
-  justify-content: space-between; /* Distribute buttons evenly in the container */
+  display: flex; /* Use flexbox for buttons */
+  justify-content: space-between; /* Distribute buttons evenly */
+  gap: 10px; /* Space between buttons */
   margin-bottom: 20px;
+  width: 100%; /* Make controls full width */
 }
 
 #ctrl-bttn,
 #reset-bttn {
-  width: 45%; /* Each button takes 40% of the container width */
+  width: 48%; /* Buttons take 48% of the container width */
   height: 40px;
-  margin: 10px;
   padding: 10px;
   font-size: 16px;
   cursor: pointer;
@@ -38,12 +42,12 @@ button {
 
 #stopwatch {
   margin: 10px;
-  /*border: none;*/
 }
 
-/* Center canvas within the page */
 canvas {
   display: block;
-  margin: auto;
+  margin: 20px auto; /* Center canvas and add margin for spacing */
   background-color: #2c303d;
-}
+  width: 100%; /* Make canvas full width */
+  max-width: 300px; /* Set max width for canvas */
+  height: aut
