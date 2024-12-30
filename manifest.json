@@ -1,0 +1,11 @@
+{
+  "name": "Judicael Tombo Stopwatch",
+  "version": "1.0.0",
+  "description": "A simple stopwatch extension with dynamic UI.",
+  "manifest_version": 3,
+  "author": "Judicael Tombo",
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "Start/Stop the Stopwatch"
+  }
+}
